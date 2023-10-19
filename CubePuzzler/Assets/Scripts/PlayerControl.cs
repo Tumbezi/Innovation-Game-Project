@@ -8,7 +8,6 @@ public class PlayerControl : MonoBehaviour
     public GameObject currentTarget;
     static public GameObject nextTarget;
     public Vector3 startPosition;
-    public float speed;
     Rigidbody rb;
 
     void Start()
@@ -20,8 +19,6 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        speed = 10 * Time.deltaTime;
-        player.transform.position = Vector3.Lerp(startPosition)
         // Check which input player presses     (Up, Down, Left, Right)
         // Inputs have values presenting them   (1   2     3     4    )
         // Go fetch information from MarkerCheck with the function getRoutes(int input)
