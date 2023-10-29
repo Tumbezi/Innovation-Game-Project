@@ -106,9 +106,9 @@ public class PlayerControllerTesting : MonoBehaviour
             else
                 return null;
         }
-        else if (currentTarget.GetComponent<MarkerCheckTemp>().edge != Edgeside.None)
+        else if (currentTarget.GetComponent<MarkerCheckTemp>().isEdge)
         {
-            CheckIfRotating(currentTarget.GetComponent<MarkerCheckTemp>().edge, direction);
+            CheckIfRotating(currentTarget.GetComponent<MarkerCheckTemp>());
             return null;
         }
         else
@@ -132,8 +132,13 @@ public class PlayerControllerTesting : MonoBehaviour
         moving = false;
     }
 
-    void CheckIfRotating(Edgeside side, Vector3 direction)
+    void CheckIfRotating(MarkerCheckTemp mc)
     {
+        if (transform.rotation.x == mc.sides[0].rotation.x && transform.rotation.y == mc.sides[0].rotation.y)
+            RotateView(mc.sides[1]);
+        else
+            RotateView(mc.sides[0]);
+        /*
         Vector3 sideToVector = new Vector3();
         switch (side)
         {
@@ -152,10 +157,14 @@ public class PlayerControllerTesting : MonoBehaviour
             Debug.Log("Rotating true");
             RotateView(side);
         }
+        */
     }
 
-    void RotateView(Edgeside side)
+    void RotateView(Transform side)
     {
+        transform.rotation = side.transform.rotation;
+        StartCoroutine(MoveTimer());
+        /*
         switch (side)
         {
             case Edgeside.Left:
@@ -168,6 +177,7 @@ public class PlayerControllerTesting : MonoBehaviour
                 transform.Rotate(Vector3.left, 90); break;
         }
         StartCoroutine(MoveTimer());
+        */
     }
 
 

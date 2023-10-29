@@ -13,8 +13,9 @@ public enum Edgeside
 
 public class MarkerCheckTemp : MonoBehaviour
 {
-    public bool isStart, isEnd;
+    public bool isStart, isEnd, isEdge;
     public Edgeside edge;
+    public Transform[] sides;
 
     // Start is called before the first frame update
     void Start()
