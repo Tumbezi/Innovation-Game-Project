@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class PlayerControllerTesting : MonoBehaviour
@@ -134,10 +135,22 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void CheckIfRotating(MarkerCheckTemp mc)
     {
+        /*
+        if (dir.x == 1f)
+            RotateView(Edgeside.Right);
+        else if (dir.x == -1f)
+            RotateView(Edgeside.Left);
+        else if (dir.y == 1f)
+            RotateView(Edgeside.Top);
+        else if (dir.y == -1f)
+            RotateView(Edgeside.Bottom);
+        */
+        
         if (transform.rotation.x == mc.sides[0].rotation.x && transform.rotation.y == mc.sides[0].rotation.y)
             RotateView(mc.sides[1]);
         else
             RotateView(mc.sides[0]);
+        
         /*
         Vector3 sideToVector = new Vector3();
         switch (side)
@@ -162,6 +175,7 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void RotateView(Transform side)
     {
+        
         transform.rotation = side.transform.rotation;
         StartCoroutine(MoveTimer());
         /*
@@ -178,6 +192,7 @@ public class PlayerControllerTesting : MonoBehaviour
         }
         StartCoroutine(MoveTimer());
         */
+        
     }
 
 
