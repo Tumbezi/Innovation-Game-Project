@@ -13,6 +13,8 @@ public class PlayerControllerTesting : MonoBehaviour
     public bool moving = false;
     [SerializeField]
     float waitTime;
+    public CameraController cc;
+    public bool cameraFar;
 
     private void Awake()
     {
@@ -177,6 +179,7 @@ public class PlayerControllerTesting : MonoBehaviour
     {
         
         transform.rotation = side.transform.rotation;
+        if (cameraFar) cc.RotateCamera(side);
         StartCoroutine(MoveTimer());
         /*
         switch (side)
