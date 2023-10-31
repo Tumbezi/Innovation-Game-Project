@@ -48,67 +48,23 @@ public class PlayerControllerTesting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (!moving) { 
-            //moveInput = transform.InverseTransformDirection(playerActions.Default.Movement.ReadValue<Vector2>());
-            if (moveInput != Vector2.zero)
-            {
-                Debug.Log(moveInput.ToString());
-                MovePlayer(CheckMoveDirection(moveInput));
-            }
-        }
-        moveInput = Vector2.zero;
 
-        
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(1))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(2))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(3))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(4))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
-        }
-        */
     }
 
     GameObject CheckMoveDirection(Vector3 direction)
     {
+        //Cast raycast to direction where player wants to move
         Ray ray = new Ray(transform.position, direction);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            //If raycast hits Marker, return that gameobject
             if (hit.collider.CompareTag("Marker"))
                 return hit.collider.gameObject;
             else
                 return null;
         }
+        //If raycast doesn't hit anything, check if current Marker is edge
         else if (currentTarget.GetComponent<MarkerCheckTemp>().isEdge)
         {
             CheckIfRotating(currentTarget.GetComponent<MarkerCheckTemp>());
@@ -130,6 +86,7 @@ public class PlayerControllerTesting : MonoBehaviour
 
     IEnumerator MoveTimer()
     {
+        //Time in which player can't move
         moving = true;
         yield return new WaitForSeconds(waitTime);
         moving = false;
@@ -148,6 +105,7 @@ public class PlayerControllerTesting : MonoBehaviour
             RotateView(Edgeside.Bottom);
         */
         
+        //Check which rotation from MarkerCheckTemp is the same as player currently has and call RotateView with the not matching side
         if (transform.rotation.x == mc.sides[0].rotation.x && transform.rotation.y == mc.sides[0].rotation.y)
             RotateView(mc.sides[1]);
         else
@@ -177,24 +135,11 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void RotateView(Transform side)
     {
-        
+        //Rotate the player to new side
+        //If cameraFar is true rotate camera separetly
         transform.rotation = side.transform.rotation;
         if (cameraFar) cc.RotateCamera(side);
         StartCoroutine(MoveTimer());
-        /*
-        switch (side)
-        {
-            case Edgeside.Left:
-                transform.Rotate(Vector3.up, 90); break;
-            case Edgeside.Right:
-                transform.Rotate(Vector3.down, 90); break;
-            case Edgeside.Top:
-                transform.Rotate(Vector3.right, 90); break;
-            case Edgeside.Bottom:
-                transform.Rotate(Vector3.left, 90); break;
-        }
-        StartCoroutine(MoveTimer());
-        */
         
     }
 
