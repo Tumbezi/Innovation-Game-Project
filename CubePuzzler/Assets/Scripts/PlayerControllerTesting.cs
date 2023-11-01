@@ -16,13 +16,15 @@ public class PlayerControllerTesting : MonoBehaviour
     public CameraController cc;
     public bool cameraFar;
 
+    private Transform currentSide;
+
     private void Awake()
     {
         playerActions = new PlayerActions();
         playerActions.Default.MoveRight.performed += ctx => MovePressed(transform.right);
         playerActions.Default.MoveLeft.performed += ctx => MovePressed(transform.right * -1);
         playerActions.Default.MoveUp.performed += ctx => MovePressed(transform.up);
-        playerActions.Default.MoveDown.performed += ctx => MovePressed(transform.up * - 1);
+        playerActions.Default.MoveDown.performed += ctx => MovePressed(transform.up * -1);
     }
 
     private void OnEnable()
@@ -46,10 +48,12 @@ public class PlayerControllerTesting : MonoBehaviour
     }
 
     // Update is called once per frame
+    /* Not used for now, so commented off
     void Update()
     {
 
     }
+    */
 
     GameObject CheckMoveDirection(Vector3 direction)
     {
@@ -139,9 +143,12 @@ public class PlayerControllerTesting : MonoBehaviour
         //If cameraFar is true rotate camera separetly
         transform.rotation = side.transform.rotation;
         if (cameraFar) cc.RotateCamera(side);
-        StartCoroutine(MoveTimer());
-        
+        currentSide = side;
     }
 
-
+    // This gets currentside from RotateView to use in other scripts
+    public Transform FetchSide()
+    {
+        return currentSide;
+    }
 }
