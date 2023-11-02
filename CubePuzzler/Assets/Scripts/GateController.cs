@@ -35,6 +35,7 @@ public class GateController : MonoBehaviour
         {
             if (!isOpen)
             {
+                //Determine is which axis the gate is moving and start Coroutine with correct axis
                 switch (axis)
                 {
                     case AxisToScale.X:
@@ -46,7 +47,7 @@ public class GateController : MonoBehaviour
                 }
             }
             else
-                transform.localScale = new Vector3(startScale, startScale, startScale);
+                StartCoroutine(ActionAnimation(new Vector3(startScale, startScale, startScale)));
 
             isOpen = !isOpen;
         }
@@ -56,14 +57,18 @@ public class GateController : MonoBehaviour
     {
         isScaling = true;
         float timeElapsed = 0f;
+        Vector3 start = transform.localScale;
 
         while (timeElapsed <= scaleTime)
         {
-            Vector3 newScale = Vector3.Lerp(startScaleVector, target, timeElapsed);
+            //Lerp new value for axis and scale gate by it
+            Vector3 newScale = Vector3.Lerp(start, target, timeElapsed);
             transform.localScale = newScale;
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+
+        //Ensure that the scale is correct
         transform.localScale = target;
         isScaling= false;
     }
