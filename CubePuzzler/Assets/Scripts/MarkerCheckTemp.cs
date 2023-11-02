@@ -16,7 +16,7 @@ public class MarkerCheckTemp : MonoBehaviour
     public bool isStart, isEnd, isEdge, isLever;
     public Edgeside edge;
     public Transform[] sides;
-    public GateController gate;
+    public GateController[] gates;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,9 @@ public class MarkerCheckTemp : MonoBehaviour
 
     public void OpenGate()
     {
-        gate.GateAction();
+        foreach (var gate in gates)
+        {
+            gate.GateAction();
+        }
     }
 }
