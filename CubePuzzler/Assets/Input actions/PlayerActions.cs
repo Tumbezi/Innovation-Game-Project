@@ -62,6 +62,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""01578b5d-964d-4ecc-b7b5-11873f6e10ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -108,6 +117,17 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""MoveDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e432b36e-76ae-4e87-8d13-1d6ed09bb926"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerPC"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -126,6 +146,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Default_MoveRight = m_Default.FindAction("MoveRight", throwIfNotFound: true);
         m_Default_MoveUp = m_Default.FindAction("MoveUp", throwIfNotFound: true);
         m_Default_MoveDown = m_Default.FindAction("MoveDown", throwIfNotFound: true);
+        m_Default_Interact = m_Default.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -189,6 +210,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_MoveRight;
     private readonly InputAction m_Default_MoveUp;
     private readonly InputAction m_Default_MoveDown;
+    private readonly InputAction m_Default_Interact;
     public struct DefaultActions
     {
         private @PlayerActions m_Wrapper;
@@ -197,6 +219,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @MoveRight => m_Wrapper.m_Default_MoveRight;
         public InputAction @MoveUp => m_Wrapper.m_Default_MoveUp;
         public InputAction @MoveDown => m_Wrapper.m_Default_MoveDown;
+        public InputAction @Interact => m_Wrapper.m_Default_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -218,6 +241,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @MoveDown.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMoveDown;
                 @MoveDown.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMoveDown;
                 @MoveDown.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMoveDown;
+                @Interact.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -234,6 +260,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @MoveDown.started += instance.OnMoveDown;
                 @MoveDown.performed += instance.OnMoveDown;
                 @MoveDown.canceled += instance.OnMoveDown;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -253,5 +282,6 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnMoveRight(InputAction.CallbackContext context);
         void OnMoveUp(InputAction.CallbackContext context);
         void OnMoveDown(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

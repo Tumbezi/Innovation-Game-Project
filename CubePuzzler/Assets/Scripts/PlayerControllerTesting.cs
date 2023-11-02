@@ -25,6 +25,7 @@ public class PlayerControllerTesting : MonoBehaviour
         playerActions.Default.MoveLeft.performed += ctx => MovePressed(transform.right * -1);
         playerActions.Default.MoveUp.performed += ctx => MovePressed(transform.up);
         playerActions.Default.MoveDown.performed += ctx => MovePressed(transform.up * -1);
+        playerActions.Default.Interact.performed += ctx => Interact();
     }
 
     private void OnEnable()
@@ -135,6 +136,14 @@ public class PlayerControllerTesting : MonoBehaviour
             RotateView(side);
         }
         */
+    }
+
+    void Interact()
+    {
+        if (currentTarget.GetComponent<MarkerCheckTemp>().isLever)
+        {
+            currentTarget.GetComponent<MarkerCheckTemp>().OpenGate();
+        }
     }
 
     void RotateView(Transform side)
