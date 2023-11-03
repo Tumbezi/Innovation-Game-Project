@@ -7,7 +7,7 @@ public class PlayerControllerTesting : MonoBehaviour
 {
     public LayerMask marker;
     private PlayerActions playerActions;
-    private Vector2 moveInput;
+    private Vector3 currentMoveDirection;
     public GameObject currentTarget;
     public float moveTime, speed;
     static public GameObject nextTarget;
@@ -60,6 +60,7 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void CheckMoveDirection(Vector3 direction)
     {
+        currentMoveDirection = direction;
         //Cast raycast to direction where player wants to move
         Ray ray = new Ray(transform.position, direction);
         RaycastHit hit;
@@ -68,13 +69,18 @@ public class PlayerControllerTesting : MonoBehaviour
             //If raycast hits Marker, return that gameobject
             if (hit.collider.CompareTag("Marker"))
                 StartCoroutine(MovePlayer(hit.collider.gameObject));
+            else
+                moving = false;
 
         }
         //If raycast doesn't hit anything, check if current Marker is edge
         else if (currentTarget.GetComponent<MarkerCheckTemp>().isEdge)
         {
             CheckIfRotating(currentTarget.GetComponent<MarkerCheckTemp>());
+            moving = false;
         }
+        else
+            moving = false;
     }
 
     /*
@@ -109,7 +115,10 @@ public class PlayerControllerTesting : MonoBehaviour
             //Ensure that the scale is correct
             transform.position = target.transform.position;
             currentTarget = target;
-            moving = false;
+            if (target.GetComponent<MarkerCheckTemp>().isIce)
+                CheckMoveDirection(currentMoveDirection);
+            else
+                moving = false;
         }
     }
 

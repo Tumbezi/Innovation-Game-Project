@@ -13,7 +13,7 @@ public enum Edgeside
 
 public class MarkerCheckTemp : MonoBehaviour
 {
-    public bool isStart, isEnd, isEdge, isLever;
+    public bool isStart, isEnd, isEdge, isLever, isIce;
     public Edgeside edge;
     public Transform[] sides;
     public GateController[] gates;
