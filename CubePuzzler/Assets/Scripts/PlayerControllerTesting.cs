@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PlayerControllerTesting : MonoBehaviour
 {
+    public LayerMask marker;
     private PlayerActions playerActions;
     private Vector2 moveInput;
     public GameObject currentTarget;
-    public float speed;
+    public float moveTime, speed;
     static public GameObject nextTarget;
     public bool moving = false;
     [SerializeField]
@@ -45,7 +46,8 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void MovePressed(Vector3 direction)
     {
-        MovePlayer(CheckMoveDirection(direction));
+        if (!moving)
+            CheckMoveDirection(direction);
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class PlayerControllerTesting : MonoBehaviour
     }
     */
 
-    GameObject CheckMoveDirection(Vector3 direction)
+    void CheckMoveDirection(Vector3 direction)
     {
         //Cast raycast to direction where player wants to move
         Ray ray = new Ray(transform.position, direction);
@@ -65,20 +67,17 @@ public class PlayerControllerTesting : MonoBehaviour
         {
             //If raycast hits Marker, return that gameobject
             if (hit.collider.CompareTag("Marker"))
-                return hit.collider.gameObject;
-            else
-                return null;
+                StartCoroutine(MovePlayer(hit.collider.gameObject));
+
         }
         //If raycast doesn't hit anything, check if current Marker is edge
         else if (currentTarget.GetComponent<MarkerCheckTemp>().isEdge)
         {
             CheckIfRotating(currentTarget.GetComponent<MarkerCheckTemp>());
-            return null;
         }
-        else
-            return null;
     }
 
+    /*
     void MovePlayer(GameObject target)
     {
         if (target != null)
@@ -86,6 +85,31 @@ public class PlayerControllerTesting : MonoBehaviour
             transform.position = target.transform.position;
             currentTarget = target;
             StartCoroutine(MoveTimer());
+        }
+    }
+    */
+
+    IEnumerator MovePlayer(GameObject target)
+    {
+        if (target != null)
+        {
+            moving = true;
+            float timeElapsed = 0f;
+            Vector3 start = transform.position;
+
+            while (timeElapsed <= moveTime)
+            {
+                //Lerp new value for axis and scale gate by it
+                Vector3 newPos = Vector3.Lerp(start, target.transform.position, timeElapsed);
+                transform.position = newPos;
+                timeElapsed += Time.deltaTime * speed;
+                yield return null;
+            }
+
+            //Ensure that the scale is correct
+            transform.position = target.transform.position;
+            currentTarget = target;
+            moving = false;
         }
     }
 
