@@ -2839,6 +2839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRotator: {fileID: 2145543541}
+  rotSpeed: 2
 --- !u!1 &1072551459
 GameObject:
   m_ObjectHideFlags: 0
