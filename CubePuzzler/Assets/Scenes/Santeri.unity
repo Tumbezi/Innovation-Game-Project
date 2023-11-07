@@ -338,7 +338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a39465caebc2ffc4e91c8fd8bb5e8ba4, type: 2}
+  - {fileID: 2100000, guid: b3593499f291eb1448e41073c6df4757, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1476,7 +1476,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a39465caebc2ffc4e91c8fd8bb5e8ba4, type: 2}
+  - {fileID: 2100000, guid: b3593499f291eb1448e41073c6df4757, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3050,7 +3050,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a39465caebc2ffc4e91c8fd8bb5e8ba4, type: 2}
+  - {fileID: 2100000, guid: b3593499f291eb1448e41073c6df4757, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3359,7 +3359,7 @@ GameObject:
   - component: {fileID: 1208992125}
   - component: {fileID: 1208992124}
   m_Layer: 3
-  m_Name: Marker07 (8)
+  m_Name: LeverMarker
   m_TagString: Marker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3434,7 +3434,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a39465caebc2ffc4e91c8fd8bb5e8ba4, type: 2}
+  - {fileID: 2100000, guid: 102e40f9324378247b08dc6751c6ac59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3668,7 +3668,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a39465caebc2ffc4e91c8fd8bb5e8ba4, type: 2}
+  - {fileID: 2100000, guid: b3593499f291eb1448e41073c6df4757, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
