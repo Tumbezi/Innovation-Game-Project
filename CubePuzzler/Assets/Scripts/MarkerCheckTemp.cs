@@ -2,19 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Edgeside
-{
-    None,
-    Left,
-    Right,
-    Top,
-    Bottom
-}
 
 public class MarkerCheckTemp : MonoBehaviour
 {
     public bool isStart, isEnd, isEdge, isLever, isIce;
-    public Edgeside edge;
     public Transform[] sides;
     public GateController[] gates;
 

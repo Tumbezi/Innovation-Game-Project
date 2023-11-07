@@ -15,7 +15,7 @@ public class PlayerControllerTesting : MonoBehaviour
     [SerializeField]
     float waitTime;
     public CameraController cc;
-    public bool cameraFar;
+    public UIManager uiManager;
 
     private Transform currentSide;
 
@@ -181,10 +181,11 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void RotateView(Transform side)
     {
+        //TODO! Add player rotation and restrictions when currenlty rotating
+
         //Rotate the player to new side
-        //If cameraFar is true rotate camera separetly
         transform.rotation = side.transform.rotation;
-        if (cameraFar) cc.RotateCamera(side);
+        cc.RotateCamera(side);
         currentSide = side;
     }
 
