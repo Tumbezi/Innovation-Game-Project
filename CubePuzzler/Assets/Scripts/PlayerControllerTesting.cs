@@ -68,7 +68,10 @@ public class PlayerControllerTesting : MonoBehaviour
         {
             //If raycast hits Marker, return that gameobject
             if (hit.collider.CompareTag("Marker"))
-                StartCoroutine(MovePlayer(hit.collider.gameObject));
+            {
+                currentTarget = hit.collider.gameObject;
+                StartCoroutine(MovePlayer(currentTarget));
+            }
             else
                 moving = false;
 
@@ -173,7 +176,7 @@ public class PlayerControllerTesting : MonoBehaviour
 
     void Interact()
     {
-        if (currentTarget.GetComponent<MarkerCheckTemp>().isLever)
+        if (currentTarget.GetComponent<MarkerCheckTemp>().isLever && !moving)
         {
             currentTarget.GetComponent<MarkerCheckTemp>().OpenGate();
         }
