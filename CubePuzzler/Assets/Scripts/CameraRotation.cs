@@ -84,6 +84,7 @@ public class CameraRotation : MonoBehaviour
         }
         else
         {
+            currentSide = pc.FetchSide();
             camera_.transform.position = currentSide.position;
             camera_.transform.rotation = currentSide.rotation;
             camera_.transform.Translate(new Vector3(0, 0, zoomin));
