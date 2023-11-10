@@ -31,10 +31,14 @@ public class UIController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             Pause();
 
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+
         if (!isPaused)
             Timer();
     }
 
+    // Timer function. Change color and bool if timer goal was missed
     void Timer()
     {
         currentTime += Time.deltaTime;
@@ -55,6 +59,7 @@ public class UIController : MonoBehaviour
         }
     }
 
+    // Pause function. Set pause status with isPaused
     void Pause()
     {
         isPaused = !isPaused;
