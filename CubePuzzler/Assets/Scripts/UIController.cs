@@ -28,12 +28,15 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+        // ESC to pause
         if (Input.GetKeyDown(KeyCode.Escape))
             Pause();
 
+        // R to restart
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 
+        // Timer!!!
         if (!isPaused)
             Timer();
     }

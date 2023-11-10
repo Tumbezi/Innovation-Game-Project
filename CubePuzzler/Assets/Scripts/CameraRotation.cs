@@ -6,7 +6,7 @@ public class CameraRotation : MonoBehaviour
 {
     public Camera camera_;
     public Transform target;
-    public float zoomin;
+    public static float zoomin;
     private Vector3 prevPos;
 
     public Transform startSide;
@@ -17,6 +17,7 @@ public class CameraRotation : MonoBehaviour
     // Set inital camera position
     private void Start()
     {
+        zoomin = -32.35f;
         camera_.transform.position = target.position;
         camera_.transform.Translate(new Vector3(0, 0, zoomin));
         pc = player.GetComponent<PlayerControllerTesting>();
@@ -26,9 +27,7 @@ public class CameraRotation : MonoBehaviour
     {
         // Grab the location of the camera position
         if (Input.GetMouseButtonDown(0))
-        {
             prevPos = camera_.ScreenToViewportPoint(Input.mousePosition);
-        }
 
         if (Input.GetMouseButton(0))
             RotateCamera();
@@ -57,15 +56,11 @@ public class CameraRotation : MonoBehaviour
     }
 
     // Gets the currently used side and transforms the camera to that position
-    void ResetCamera()
+    public void ResetCamera()
     {
-        // We need to set the default side in order to remove 15+ lines of code...
-        // Currently the "FetchSide()" which gathers information from "RotateView()"
-        // doesn't have a default value for the initial return. It retuns "null".
-        // Also doesn't return the top camera position, so it cannot be reset to that.
-        // There's a way to implement this, but I'll wait for feedback :)!
-        // In the meanwhile, we just catch the error including the null Transform and
-        // give it a default value while that's going on.
+        // We need to set the default side in order to remove 15+ lines of code...  Currently the "FetchSide()" which gathers information from "RotateView()"
+        // doesn't have a default value for the initial return. It retuns "null". Also doesn't return the top camera position, so it cannot be reset to that.
+        // In the meanwhile, we just catch the error including the null Transform and give it a default value while that's going on.
         if (currentSide == null)
         {
             camera_.transform.position = startSide.position;
