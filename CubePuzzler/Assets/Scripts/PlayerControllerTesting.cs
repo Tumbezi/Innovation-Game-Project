@@ -188,7 +188,6 @@ public class PlayerControllerTesting : MonoBehaviour
 
         //Rotate the player to new side
         transform.rotation = side.transform.rotation;
-        if (cameraFar) cc.RotateCamera(side);
 
         // Reset camera position if rotation is made.
         currentSide = side;
