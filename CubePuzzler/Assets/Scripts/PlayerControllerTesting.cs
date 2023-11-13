@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerControllerTesting : MonoBehaviour
 {
+    public SkyboxManager skyboxManager;
     public LayerMask marker;
     private PlayerActions playerActions;
     private Vector3 currentMoveDirection;
@@ -191,9 +192,13 @@ public class PlayerControllerTesting : MonoBehaviour
 
         // Reset camera position if rotation is made.
         currentSide = side;
+        cc.RotateCamera(side);
+        /*
         cc.transform.position = currentSide.position;
         cc.transform.rotation = currentSide.rotation;
         cc.transform.Translate(0, 0, CameraRotation.zoomin);
+        */
+        skyboxManager.ChangeSkybox();
     }
 
     // This gets currentside from RotateView to use in other scripts
