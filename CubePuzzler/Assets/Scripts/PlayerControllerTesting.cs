@@ -188,8 +188,13 @@ public class PlayerControllerTesting : MonoBehaviour
 
         //Rotate the player to new side
         transform.rotation = side.transform.rotation;
-        cc.RotateCamera(side);
+        if (cameraFar) cc.RotateCamera(side);
+
+        // Reset camera position if rotation is made.
         currentSide = side;
+        cc.transform.position = currentSide.position;
+        cc.transform.rotation = currentSide.rotation;
+        cc.transform.Translate(0, 0, CameraRotation.zoomin);
     }
 
     // This gets currentside from RotateView to use in other scripts
