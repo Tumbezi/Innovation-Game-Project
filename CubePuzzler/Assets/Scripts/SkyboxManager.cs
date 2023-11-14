@@ -34,5 +34,6 @@ public class SkyboxManager : MonoBehaviour
         else
             index++;
         RenderSettings.skybox = skyboxMaterials[index];
+        //(int) SkyboxColor
     }
 }
