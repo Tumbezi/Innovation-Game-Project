@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
     public LayerMask marker;
     private PlayerActions playerActions;
     private Vector3 currentMoveDirection;
-    public GameObject currentTarget;
+    public GameObject currentTarget, travelStartTarget;
     public float moveTime, speed;
     static public GameObject nextTarget;
     public bool moving = false;
@@ -48,7 +48,10 @@ public class PlayerControl : MonoBehaviour
     void MovePressed(Vector3 direction)
     {
         if (!moving)
+        {
+            travelStartTarget = currentTarget;
             CheckMoveDirection(direction);
+        }
     }
 
     // Update is called once per frame
@@ -87,40 +90,37 @@ public class PlayerControl : MonoBehaviour
             moving = false;
     }
 
-    /*
-    void MovePlayer(GameObject target)
-    {
-        if (target != null)
-        {
-            transform.position = target.transform.position;
-            currentTarget = target;
-            StartCoroutine(MoveTimer());
-        }
-    }
-    */
-
     IEnumerator MovePlayer(GameObject target)
     {
         if (target != null)
         {
+            
             moving = true;
             float timeElapsed = 0f;
             Vector3 start = transform.position;
 
             while (timeElapsed <= moveTime)
             {
-                //Lerp new value for axis and scale gate by it
+                //Move player by lerping the new position
                 Vector3 newPos = Vector3.Lerp(start, target.transform.position, timeElapsed);
                 transform.position = newPos;
                 timeElapsed += Time.deltaTime * speed;
                 yield return null;
             }
 
-            //Ensure that the scale is correct
+            //Ensure right movement by setting player to the right position
             transform.position = target.transform.position;
             currentTarget = target;
+
+            //If new current marker is ice marker, try to move player again to same direction
             if (target.GetComponent<MarkerCheck>().isIce)
                 CheckMoveDirection(currentMoveDirection);
+            else if (target.GetComponent<MarkerCheck>().isHazard)
+            {
+                transform.position = travelStartTarget.transform.position;
+                currentTarget = travelStartTarget;
+                moving = false;
+            }
             else
                 moving = false;
         }
@@ -147,7 +147,7 @@ public class PlayerControl : MonoBehaviour
             RotateView(Edgeside.Bottom);
         */
 
-        //Check which rotation from MarkerCheckTemp is the same as player currently has and call RotateView with the not matching side
+        //Check which rotation from MarkerCheck is the same as player currently has and call RotateView with the not matching side
         if (transform.rotation.x == mc.sides[0].rotation.x && transform.rotation.y == mc.sides[0].rotation.y)
             RotateView(mc.sides[1]);
         else

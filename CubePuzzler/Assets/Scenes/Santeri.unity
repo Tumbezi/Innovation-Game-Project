@@ -366,6 +366,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 1
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &107358650
@@ -483,6 +484,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!4 &179129692 stripped
@@ -616,6 +618,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &353546325
@@ -733,6 +736,7 @@ MonoBehaviour:
   isEdge: 1
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides:
   - {fileID: 1126602453}
   - {fileID: 1782678334}
@@ -852,6 +856,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &473475616
@@ -1066,6 +1071,7 @@ MonoBehaviour:
   isEdge: 1
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides:
   - {fileID: 1126602453}
   - {fileID: 843982700}
@@ -1185,6 +1191,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &518491170
@@ -1611,6 +1618,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 1
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &619169015
@@ -1728,6 +1736,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &622374374
@@ -2055,6 +2064,124 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789255123}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &842483763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842483764}
+  - component: {fileID: 842483768}
+  - component: {fileID: 842483767}
+  - component: {fileID: 842483766}
+  - component: {fileID: 842483765}
+  m_Layer: 3
+  m_Name: HazardMarker
+  m_TagString: Marker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842483764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842483763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.536, y: -0.16, z: 12.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1336966917}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842483765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842483763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  isHazard: 1
+  sides: []
+  gates: []
+--- !u!65 &842483766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842483763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &842483767
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842483763}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9b74bdc29ab7d034897a8680826ddc64, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &842483768
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842483763}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &843982699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2328,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &905046364
@@ -2318,6 +2446,7 @@ MonoBehaviour:
   isEdge: 1
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides:
   - {fileID: 843982700}
   - {fileID: 1782678334}
@@ -2540,6 +2669,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &930760227
@@ -2792,6 +2922,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &950913965
@@ -2940,6 +3071,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &963194225
@@ -3156,6 +3288,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1107531882
@@ -3273,6 +3406,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 1
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1126602452
@@ -3421,6 +3555,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1167652085
@@ -3538,6 +3673,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1208992122
@@ -3655,6 +3791,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 1
   isIce: 0
+  isHazard: 0
   sides: []
   gates:
   - {fileID: 179129693}
@@ -3774,6 +3911,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1266800195
@@ -3891,6 +4029,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 1
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1280359226
@@ -4008,6 +4147,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1336689916
@@ -4160,6 +4300,7 @@ Transform:
   - {fileID: 36782452}
   - {fileID: 1266800196}
   - {fileID: 1641080991}
+  - {fileID: 842483764}
   m_Father: {fileID: 925457926}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4443,6 +4584,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1483900664
@@ -4738,6 +4880,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   currentTarget: {fileID: 348662927}
+  travelStartTarget: {fileID: 0}
   moveTime: 1
   speed: 2
   moving: 0
@@ -4905,6 +5048,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &1657951110
@@ -5668,6 +5812,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &2090635922
@@ -7736,6 +7881,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   currentTarget: {fileID: 0}
+  travelStartTarget: {fileID: 0}
   moveTime: 0
   speed: 0.25
   moving: 0
@@ -8056,6 +8202,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!1 &8850748021437599344
@@ -8220,6 +8367,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!33 &8850748021653370809
@@ -8387,6 +8535,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!4 &8850748021654539083
@@ -8601,6 +8750,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!4 &8850748021733341047
@@ -8910,6 +9060,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!23 &8850748021955764392
@@ -9471,6 +9622,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!33 &8850748022247325235
@@ -9907,6 +10059,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!4 &8850748022470214173
@@ -9941,6 +10094,7 @@ MonoBehaviour:
   isEdge: 0
   isLever: 0
   isIce: 0
+  isHazard: 0
   sides: []
   gates: []
 --- !u!23 &8850748022481077864

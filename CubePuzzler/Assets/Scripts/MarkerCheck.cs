@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MarkerCheck : MonoBehaviour
 {
-    public bool isStart, isEnd, isEdge, isLever, isIce;
+    public bool isStart, isEnd, isEdge, isLever, isIce, isHazard;
     public Transform[] sides;
     public GateController[] gates;
 
