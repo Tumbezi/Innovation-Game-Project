@@ -1,103 +1,209 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class PlayerControl : MonoBehaviour
-{
-    public GameObject player;
+{ 
+    public SkyboxManager skyboxManager;
+    public LayerMask marker;
+    private PlayerActions playerActions;
+    private Vector3 currentMoveDirection;
     public GameObject currentTarget;
-    public float speed;
+    public float moveTime, speed;
     static public GameObject nextTarget;
-    
-    private Rigidbody rb;
-
-    private Vector3 startPosition;
-    private Vector3 endPosition;
-    private float duration = 3f;
-    private float elapsedTime;
-
     public bool moving = false;
+    [SerializeField]
+    float waitTime;
+    public CameraController cc;
+    public UIManager uiManager;
+
+    private Transform currentSide;
+
+    private void Awake()
+    {
+        playerActions = new PlayerActions();
+        playerActions.Default.MoveRight.performed += ctx => MovePressed(transform.right);
+        playerActions.Default.MoveLeft.performed += ctx => MovePressed(transform.right * -1);
+        playerActions.Default.MoveUp.performed += ctx => MovePressed(transform.up);
+        playerActions.Default.MoveDown.performed += ctx => MovePressed(transform.up * -1);
+        playerActions.Default.Interact.performed += ctx => Interact();
+    }
+
+    private void OnEnable()
+    {
+        playerActions.Default.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActions.Default.Disable();
+    }
 
     void Start()
     {
-        // Get the start position for later Vector3.Lerp?
-        startPosition = transform.position;
-        rb = gameObject.GetComponent<Rigidbody>();
+        transform.position = currentTarget.transform.position;
     }
 
+    void MovePressed(Vector3 direction)
+    {
+        if (!moving)
+            CheckMoveDirection(direction);
+    }
+
+    // Update is called once per frame
+    /* Not used for now, so commented off
     void Update()
     {
-        // Check which input player presses     (Up, Down, Left, Right)
-        // Inputs have values presenting them   (1   2     3     4    )
-        // Go fetch information from MarkerCheck with the function getRoutes(int input)
-        // Information contains a possible location and if it's possible to move there...
-        // If the information retrieved comes out TRUE then GO to the POSITION that we just GOT!!!
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+    }
+    */
+
+    void CheckMoveDirection(Vector3 direction)
+    {
+        currentMoveDirection = direction;
+        //Cast raycast to direction where player wants to move
+        Ray ray = new Ray(transform.position, direction);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(1))
+            //If raycast hits Marker, return that gameobject
+            if (hit.collider.CompareTag("Marker"))
             {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
+                currentTarget = hit.collider.gameObject;
+                StartCoroutine(MovePlayer(currentTarget));
             }
-        }
+            else
+                moving = false;
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        }
+        //If raycast doesn't hit anything, check if current Marker is edge
+        else if (currentTarget.GetComponent<MarkerCheck>().isEdge)
         {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(2))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
+            CheckIfRotating(currentTarget.GetComponent<MarkerCheck>());
+            moving = false;
         }
+        else
+            moving = false;
+    }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {   
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(3))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+    /*
+    void MovePlayer(GameObject target)
+    {
+        if (target != null)
         {
-            if (currentTarget.GetComponent<MarkerCheck>().getRoutes(4))
-            {
-                transform.position = nextTarget.transform.position;
-                //moving = true;
-            }
+            transform.position = target.transform.position;
+            currentTarget = target;
+            StartCoroutine(MoveTimer());
         }
+    }
+    */
+
+    IEnumerator MovePlayer(GameObject target)
+    {
+        if (target != null)
+        {
+            moving = true;
+            float timeElapsed = 0f;
+            Vector3 start = transform.position;
+
+            while (timeElapsed <= moveTime)
+            {
+                //Lerp new value for axis and scale gate by it
+                Vector3 newPos = Vector3.Lerp(start, target.transform.position, timeElapsed);
+                transform.position = newPos;
+                timeElapsed += Time.deltaTime * speed;
+                yield return null;
+            }
+
+            //Ensure that the scale is correct
+            transform.position = target.transform.position;
+            currentTarget = target;
+            if (target.GetComponent<MarkerCheck>().isIce)
+                CheckMoveDirection(currentMoveDirection);
+            else
+                moving = false;
+        }
+    }
+
+    IEnumerator MoveTimer()
+    {
+        //Time in which player can't move
+        moving = true;
+        yield return new WaitForSeconds(waitTime);
+        moving = false;
+    }
+
+    void CheckIfRotating(MarkerCheck mc)
+    {
+        /*
+        if (dir.x == 1f)
+            RotateView(Edgeside.Right);
+        else if (dir.x == -1f)
+            RotateView(Edgeside.Left);
+        else if (dir.y == 1f)
+            RotateView(Edgeside.Top);
+        else if (dir.y == -1f)
+            RotateView(Edgeside.Bottom);
+        */
+
+        //Check which rotation from MarkerCheckTemp is the same as player currently has and call RotateView with the not matching side
+        if (transform.rotation.x == mc.sides[0].rotation.x && transform.rotation.y == mc.sides[0].rotation.y)
+            RotateView(mc.sides[1]);
+        else
+            RotateView(mc.sides[0]);
 
         /*
-        if (moving)
+        Vector3 sideToVector = new Vector3();
+        switch (side)
         {
-            StartCoroutine(WaitForMovement());
+            case Edgeside.Left:
+                sideToVector = Vector3.left; break;
+            case Edgeside.Right:
+                sideToVector = Vector3.right; break;
+            case Edgeside.Top:
+                sideToVector = Vector3.up; break;
+            case Edgeside.Bottom:
+                sideToVector = Vector3.down; break;
+        }
+
+        if (sideToVector == direction)
+        {
+            Debug.Log("Rotating true");
+            RotateView(side);
         }
         */
     }
 
-    // Self explanatory
-    private void OnTriggerEnter(Collider other)
+    void Interact()
     {
-        if (other.CompareTag("Marker") && !moving)
+        if (currentTarget.GetComponent<MarkerCheck>().isLever && !moving)
         {
-            currentTarget = other.gameObject;
-            startPosition = other.gameObject.transform.position;
-        } 
-    }
-
-    /*
-    private IEnumerator WaitForMovement()
-    {
-        while (true)
-        {
-            elapsedTime += Time.fixedDeltaTime;
-            float perComp = elapsedTime / duration;
-            transform.position = Vector3.Lerp(startPosition, nextTarget.transform.position, perComp);
-            yield return new WaitForSeconds(duration);
-            moving = false;
+            currentTarget.GetComponent<MarkerCheck>().OpenGate();
         }
     }
-    */
+
+    void RotateView(Transform side)
+    {
+        //TODO! Add player rotation and restrictions when currenlty rotating
+
+        //Rotate the player to new side
+        transform.rotation = side.transform.rotation;
+
+        // Reset camera position if rotation is made.
+        currentSide = side;
+        cc.RotateCamera(side);
+        /*
+        cc.transform.position = currentSide.position;
+        cc.transform.rotation = currentSide.rotation;
+        cc.transform.Translate(0, 0, CameraRotation.zoomin);
+        */
+        skyboxManager.ChangeSkybox();
+    }
+
+    // This gets currentside from RotateView to use in other scripts
+    public Transform FetchSide()
+    {
+        return currentSide;
+    }
 }

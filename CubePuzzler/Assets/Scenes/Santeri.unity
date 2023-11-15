@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 36782456}
   - component: {fileID: 36782455}
   - component: {fileID: 36782454}
-  - component: {fileID: 36782453}
+  - component: {fileID: 36782457}
   m_Layer: 3
   m_Name: IceMarker (2)
   m_TagString: Marker
@@ -286,25 +286,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &36782453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36782451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 1
-  sides: []
-  gates: []
 --- !u!65 &36782454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -368,6 +349,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36782451}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &36782457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36782451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 1
+  sides: []
+  gates: []
 --- !u!1 &107358650
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 107358655}
   - component: {fileID: 107358654}
   - component: {fileID: 107358653}
-  - component: {fileID: 107358652}
+  - component: {fileID: 107358656}
   m_Layer: 3
   m_Name: Marker07 (2)
   m_TagString: Marker
@@ -403,25 +403,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &107358652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107358650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &107358653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -485,6 +466,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107358650}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &107358656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107358650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!4 &179129692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 133702374873748847, guid: 360f4c9704c5c3e42b50ebd68491e35e, type: 3}
@@ -501,16 +501,123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c64565261f7d64faef3739aaf416b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &348662927 stripped
+--- !u!1 &348662927
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2576621484196558751, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-  m_PrefabInstance: {fileID: 2576621483873065744}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &348662932 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348662932}
+  - component: {fileID: 348662931}
+  - component: {fileID: 348662930}
+  - component: {fileID: 348662929}
+  - component: {fileID: 348662933}
+  m_Layer: 3
+  m_Name: Marker00
+  m_TagString: Marker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &348662929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348662927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &348662930
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348662927}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a39465caebc2ffc4e91c8fd8bb5e8ba4, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &348662931
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348662927}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &348662932
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-  m_PrefabInstance: {fileID: 2576621483873065744}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348662927}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.52, y: -0.1600002, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1336966917}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348662933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348662927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &353546325
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +725,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 353546325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -642,7 +749,7 @@ GameObject:
   - component: {fileID: 399897953}
   - component: {fileID: 399897952}
   - component: {fileID: 399897951}
-  - component: {fileID: 399897950}
+  - component: {fileID: 399897954}
   m_Layer: 3
   m_Name: Marker07 (3)
   m_TagString: Marker
@@ -665,25 +772,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &399897950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399897948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &399897951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -747,6 +835,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399897948}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &399897954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399897948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &473475616
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +963,7 @@ GameObject:
   - component: {fileID: 473728514}
   - component: {fileID: 473728513}
   - component: {fileID: 473728512}
-  - component: {fileID: 473728511}
+  - component: {fileID: 473728515}
   m_Layer: 3
   m_Name: Marker07 (1)
   m_TagString: Marker
@@ -879,27 +986,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &473728511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473728509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 1
-  isLever: 0
-  isIce: 0
-  sides:
-  - {fileID: 1126602453}
-  - {fileID: 843982700}
-  gates: []
 --- !u!65 &473728512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -963,6 +1049,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473728509}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &473728515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473728509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 1
+  isLever: 0
+  isIce: 0
+  sides:
+  - {fileID: 1126602453}
+  - {fileID: 843982700}
+  gates: []
 --- !u!1 &516025456
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +1082,7 @@ GameObject:
   - component: {fileID: 516025461}
   - component: {fileID: 516025460}
   - component: {fileID: 516025459}
-  - component: {fileID: 516025458}
+  - component: {fileID: 516025462}
   m_Layer: 3
   m_Name: Marker07 (6)
   m_TagString: Marker
@@ -998,25 +1105,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &516025458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516025456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &516025459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1080,6 +1168,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516025456}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &516025462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516025456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &518491170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1508,7 @@ GameObject:
   - component: {fileID: 611388593}
   - component: {fileID: 611388592}
   - component: {fileID: 611388591}
-  - component: {fileID: 611388590}
+  - component: {fileID: 611388594}
   m_Layer: 3
   m_Name: IceMarker
   m_TagString: Marker
@@ -1424,25 +1531,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &611388590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611388588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 1
-  sides: []
-  gates: []
 --- !u!65 &611388591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1506,6 +1594,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611388588}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &611388594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611388588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 1
+  sides: []
+  gates: []
 --- !u!1 &619169015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1625,7 @@ GameObject:
   - component: {fileID: 619169020}
   - component: {fileID: 619169019}
   - component: {fileID: 619169018}
-  - component: {fileID: 619169017}
+  - component: {fileID: 619169021}
   m_Layer: 3
   m_Name: Marker07 (5)
   m_TagString: Marker
@@ -1541,25 +1648,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &619169017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619169015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &619169018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1623,6 +1711,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619169015}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &619169021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619169015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &622374374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 896802615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -2108,7 +2215,7 @@ GameObject:
   - component: {fileID: 905046369}
   - component: {fileID: 905046368}
   - component: {fileID: 905046367}
-  - component: {fileID: 905046366}
+  - component: {fileID: 905046370}
   m_Layer: 3
   m_Name: Marker07 (4)
   m_TagString: Marker
@@ -2131,27 +2238,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &905046366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905046364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 1
-  isLever: 0
-  isIce: 0
-  sides:
-  - {fileID: 843982700}
-  - {fileID: 1782678334}
-  gates: []
 --- !u!65 &905046367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2215,6 +2301,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905046364}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &905046370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905046364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 1
+  isLever: 0
+  isIce: 0
+  sides:
+  - {fileID: 843982700}
+  - {fileID: 1782678334}
+  gates: []
 --- !u!1 &925457922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,7 +2532,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 925785479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -2677,7 +2784,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 935946800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -2825,7 +2932,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 959660580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -2946,7 +3053,7 @@ GameObject:
   - component: {fileID: 1072551464}
   - component: {fileID: 1072551463}
   - component: {fileID: 1072551462}
-  - component: {fileID: 1072551461}
+  - component: {fileID: 1072551465}
   m_Layer: 3
   m_Name: Marker07 (7)
   m_TagString: Marker
@@ -2969,25 +3076,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1072551461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072551459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &1072551462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3051,6 +3139,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072551459}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1072551465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072551459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &1107531882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,7 +3170,7 @@ GameObject:
   - component: {fileID: 1107531887}
   - component: {fileID: 1107531886}
   - component: {fileID: 1107531885}
-  - component: {fileID: 1107531884}
+  - component: {fileID: 1107531888}
   m_Layer: 3
   m_Name: IceMarker (1)
   m_TagString: Marker
@@ -3086,25 +3193,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1107531884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107531882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 1
-  sides: []
-  gates: []
 --- !u!65 &1107531885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3168,6 +3256,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107531882}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1107531888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107531882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 1
+  sides: []
+  gates: []
 --- !u!1 &1126602452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3413,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1157124800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -3423,7 +3530,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167652085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -3445,7 +3552,7 @@ GameObject:
   - component: {fileID: 1208992127}
   - component: {fileID: 1208992126}
   - component: {fileID: 1208992125}
-  - component: {fileID: 1208992124}
+  - component: {fileID: 1208992128}
   m_Layer: 3
   m_Name: LeverMarker
   m_TagString: Marker
@@ -3468,27 +3575,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1208992124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208992122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 1
-  isIce: 0
-  sides: []
-  gates:
-  - {fileID: 179129693}
-  - {fileID: 2090635924}
 --- !u!65 &1208992125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3552,6 +3638,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208992122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1208992128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208992122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 1
+  isIce: 0
+  sides: []
+  gates:
+  - {fileID: 179129693}
+  - {fileID: 2090635924}
 --- !u!1 &1250563810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,7 +3766,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1250563810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -3681,7 +3788,7 @@ GameObject:
   - component: {fileID: 1266800200}
   - component: {fileID: 1266800199}
   - component: {fileID: 1266800198}
-  - component: {fileID: 1266800197}
+  - component: {fileID: 1266800201}
   m_Layer: 3
   m_Name: IceMarker (3)
   m_TagString: Marker
@@ -3704,25 +3811,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1266800197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266800195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 1
-  sides: []
-  gates: []
 --- !u!65 &1266800198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3786,6 +3874,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266800195}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1266800201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266800195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 1
+  sides: []
+  gates: []
 --- !u!1 &1280359226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,7 +4000,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280359226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -4233,7 +4340,7 @@ GameObject:
   - component: {fileID: 1447497431}
   - component: {fileID: 1447497430}
   - component: {fileID: 1447497429}
-  - component: {fileID: 1447497428}
+  - component: {fileID: 1447497432}
   m_Layer: 3
   m_Name: Marker07 (9)
   m_TagString: Marker
@@ -4256,25 +4363,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1447497428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447497426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &1447497429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4338,6 +4426,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447497426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1447497432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447497426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &1483900664
 GameObject:
   m_ObjectHideFlags: 0
@@ -4497,7 +4604,7 @@ GameObject:
   - component: {fileID: 1512590439}
   - component: {fileID: 1512590438}
   - component: {fileID: 1512590436}
-  - component: {fileID: 1512590441}
+  - component: {fileID: 1512590443}
   - component: {fileID: 1512590442}
   m_Layer: 0
   m_Name: Player (1)
@@ -4600,29 +4707,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512590434}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1512590441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512590434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b0540ee91a5754419175b50bd7b3c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skyboxManager: {fileID: 1494768633}
-  marker:
-    serializedVersion: 2
-    m_Bits: 8
-  currentTarget: {fileID: 348662927}
-  moveTime: 1
-  speed: 2
-  moving: 0
-  waitTime: 0.3
-  cc: {fileID: 963194229}
-  uiManager: {fileID: 0}
 --- !u!114 &1512590442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4636,7 +4720,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 578712631}
-  playerController: {fileID: 1512590441}
+  playerController: {fileID: 0}
+--- !u!114 &1512590443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512590434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f9efef559f8c64fa5b23bbfe4f84e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skyboxManager: {fileID: 1494768633}
+  marker:
+    serializedVersion: 2
+    m_Bits: 8
+  currentTarget: {fileID: 348662927}
+  moveTime: 1
+  speed: 2
+  moving: 0
+  waitTime: 0.3
+  cc: {fileID: 963194229}
+  uiManager: {fileID: 0}
 --- !u!1 &1616068693
 GameObject:
   m_ObjectHideFlags: 0
@@ -4695,7 +4802,7 @@ GameObject:
   - component: {fileID: 1641080995}
   - component: {fileID: 1641080994}
   - component: {fileID: 1641080993}
-  - component: {fileID: 1641080992}
+  - component: {fileID: 1641080996}
   m_Layer: 3
   m_Name: Marker02 (4)
   m_TagString: Marker
@@ -4718,25 +4825,6 @@ Transform:
   m_Father: {fileID: 1336966917}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1641080992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641080990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isEnd: 0
-  isEdge: 0
-  isLever: 0
-  isIce: 0
-  sides: []
-  gates: []
 --- !u!65 &1641080993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4800,6 +4888,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641080990}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1641080996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641080990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &1657951110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,7 +5660,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2083844832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ef79c7a3757c745913ade23658c011, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
@@ -6291,63 +6398,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8821576716430363235}
   m_Mesh: {fileID: 8592320352006162159, guid: eb938bb01b263d948ad1fff3e68a4a09, type: 3}
---- !u!1001 &2576621483873065744
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1336966917}
-    m_Modifications:
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.1600002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558724, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576621484196558751, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
-      propertyPath: m_Name
-      value: Marker00
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4798db78dc03e434cb849720bb7b7a21, type: 3}
 --- !u!23 &2975526813036193181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7681,10 +7731,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f9efef559f8c64fa5b23bbfe4f84e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8850748021149756936}
+  skyboxManager: {fileID: 0}
+  marker:
+    serializedVersion: 2
+    m_Bits: 0
   currentTarget: {fileID: 0}
+  moveTime: 0
   speed: 0.25
   moving: 0
+  waitTime: 0
+  cc: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!1 &8850748021149756936
 GameObject:
   m_ObjectHideFlags: 0
@@ -7994,14 +8051,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 0
-  goDown: 0
-  goLeft: 1
-  goRight: 0
-  up: {fileID: 8850748021908401261}
-  down: {fileID: 8850748021908401261}
-  left: {fileID: 8850748022247325239}
-  right: {fileID: 8850748021908401261}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!1 &8850748021437599344
 GameObject:
   m_ObjectHideFlags: 0
@@ -8159,14 +8215,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 0
-  goDown: 1
-  goLeft: 0
-  goRight: 0
-  up: {fileID: 8850748021908401261}
-  down: {fileID: 8850748022247325239}
-  left: {fileID: 8850748021908401261}
-  right: {fileID: 8850748021908401261}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!33 &8850748021653370809
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8327,14 +8382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 1
-  goDown: 0
-  goLeft: 0
-  goRight: 1
-  up: {fileID: 8850748022470214145}
-  down: {fileID: 8850748021908401261}
-  left: {fileID: 8850748021908401261}
-  right: {fileID: 8850748021914769958}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!4 &8850748021654539083
 Transform:
   m_ObjectHideFlags: 0
@@ -8542,14 +8596,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 1
-  goDown: 0
-  goLeft: 1
-  goRight: 1
-  up: {fileID: 8850748022247325239}
-  down: {fileID: 8850748021908401261}
-  left: {fileID: 8850748022470214145}
-  right: {fileID: 8850748022481077870}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!4 &8850748021733341047
 Transform:
   m_ObjectHideFlags: 0
@@ -8852,14 +8905,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 0
-  goDown: 0
-  goLeft: 1
-  goRight: 0
-  up: {fileID: 8850748021908401261}
-  down: {fileID: 8850748021908401261}
-  left: {fileID: 8850748021654539087}
-  right: {fileID: 8850748021908401261}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!23 &8850748021955764392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9414,14 +9466,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 1
-  goDown: 1
-  goLeft: 0
-  goRight: 1
-  up: {fileID: 8850748021653370813}
-  down: {fileID: 8850748021733341051}
-  left: {fileID: 8850748021908401261}
-  right: {fileID: 8850748021437599344}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!33 &8850748022247325235
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9851,14 +9902,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 0
-  goDown: 1
-  goLeft: 0
-  goRight: 1
-  up: {fileID: 8850748021908401261}
-  down: {fileID: 8850748021654539087}
-  left: {fileID: 8850748021908401261}
-  right: {fileID: 8850748021733341051}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!4 &8850748022470214173
 Transform:
   m_ObjectHideFlags: 0
@@ -9886,14 +9936,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9f98c8d6cf21843abe77b748175a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUp: 0
-  goDown: 0
-  goLeft: 1
-  goRight: 0
-  up: {fileID: 8850748021908401261}
-  down: {fileID: 8850748021908401261}
-  left: {fileID: 8850748021733341051}
-  right: {fileID: 8850748021908401261}
+  isStart: 0
+  isEnd: 0
+  isEdge: 0
+  isLever: 0
+  isIce: 0
+  sides: []
+  gates: []
 --- !u!23 &8850748022481077864
 MeshRenderer:
   m_ObjectHideFlags: 0

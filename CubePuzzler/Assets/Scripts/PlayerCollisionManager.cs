@@ -33,8 +33,7 @@ public class PlayerCollisionManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Marker"))
         {
-            Debug.Log("Entered");
-            if (collision.gameObject.GetComponent<MarkerCheckTemp>().isLever)
+            if (collision.gameObject.GetComponent<MarkerCheck>().isLever)
                 uiManager.InteractTextVisibility(true);
         }
     }
