@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    private PlayerActions playerActions;
+
     // Pause variables
     public GameObject pauseMenu;
     public bool isPaused = false;
@@ -28,6 +30,23 @@ public class UIController : MonoBehaviour
     // Hearth icons
     public List<Image> hearthIcons;
 
+    private void Awake()
+    {
+        playerActions = new PlayerActions();
+        playerActions.Default.Pause.performed += ctx => Pause();
+        playerActions.Default.Restart.performed += ctx => Restart();
+
+    }
+    private void OnEnable()
+    {
+        playerActions.Default.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActions.Default.Disable();
+    }
+
     void Start()
     {
         timer.color = new Color(0.97f, 0.71f, 0.19f);
@@ -35,14 +54,15 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+        /*
         // ESC to pause
         if (Input.GetKeyDown(KeyCode.Escape))
             Pause();
 
         // R to restart
         if (Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-
+            
+        */
         // Timer!!!
         if (!isPaused)
             Timer();
@@ -72,8 +92,23 @@ public class UIController : MonoBehaviour
     // Pause function. Set pause status with isPaused
     void Pause()
     {
-        isPaused = !isPaused;
+        if (!isPaused)
+        {
+            isPaused = !isPaused;
+            Time.timeScale = 0f;
+        } else
+        {
+            isPaused = !isPaused;
+            Time.timeScale = 1f;
+        }
+        //isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
+    }
+
+    void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     public void Continue()
@@ -99,7 +134,7 @@ public class UIController : MonoBehaviour
             hearthIcons[i].gameObject.SetActive(false);
         }
 
-        //Enable amount of hearth icons corresponding of players health
+        //Enable amount of hearth icons corresponding to players health
         for (int i = 0; i <= amount -1; i++)
         {
             if (i < hearthIcons.Count)

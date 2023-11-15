@@ -71,6 +71,24 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7415fa65-e5db-4145-9091-111a1687ed8b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf0013e7-17ad-42ec-a02c-44de29f05913"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -128,6 +146,28 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b1ac04b-dbfb-4eee-970d-e1dac59b7f60"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerPC"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51651733-f76b-4d5c-ba4d-3831254c9064"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerPC"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -147,6 +187,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Default_MoveUp = m_Default.FindAction("MoveUp", throwIfNotFound: true);
         m_Default_MoveDown = m_Default.FindAction("MoveDown", throwIfNotFound: true);
         m_Default_Interact = m_Default.FindAction("Interact", throwIfNotFound: true);
+        m_Default_Pause = m_Default.FindAction("Pause", throwIfNotFound: true);
+        m_Default_Restart = m_Default.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -211,6 +253,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_MoveUp;
     private readonly InputAction m_Default_MoveDown;
     private readonly InputAction m_Default_Interact;
+    private readonly InputAction m_Default_Pause;
+    private readonly InputAction m_Default_Restart;
     public struct DefaultActions
     {
         private @PlayerActions m_Wrapper;
@@ -220,6 +264,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @MoveUp => m_Wrapper.m_Default_MoveUp;
         public InputAction @MoveDown => m_Wrapper.m_Default_MoveDown;
         public InputAction @Interact => m_Wrapper.m_Default_Interact;
+        public InputAction @Pause => m_Wrapper.m_Default_Pause;
+        public InputAction @Restart => m_Wrapper.m_Default_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -244,6 +290,12 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnInteract;
+                @Pause.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPause;
+                @Restart.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRestart;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -263,6 +315,12 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
             }
         }
     }
@@ -283,5 +341,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnMoveUp(InputAction.CallbackContext context);
         void OnMoveDown(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }
