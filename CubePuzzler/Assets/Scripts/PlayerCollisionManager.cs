@@ -5,10 +5,8 @@ using UnityEngine;
 public class PlayerCollisionManager : MonoBehaviour
 {
     [SerializeField]
-    UIManager uiManager;
+    UIController uiController;
 
-    [SerializeField]
-    PlayerControllerTesting playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +23,7 @@ public class PlayerCollisionManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Marker"))
         {
-            uiManager.InteractTextVisibility(false);
+            uiController.InteractTextVisibility(false);
         }
     }
 
@@ -34,7 +32,7 @@ public class PlayerCollisionManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Marker"))
         {
             if (collision.gameObject.GetComponent<MarkerCheck>().isLever)
-                uiManager.InteractTextVisibility(true);
+                uiController.InteractTextVisibility(true);
         }
     }
 }

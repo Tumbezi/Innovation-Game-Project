@@ -21,6 +21,9 @@ public class UIController : MonoBehaviour
 
     bool bronzeFail = false, silverFail = false, goldFail = false;
 
+    // Interact text
+    public TMP_Text interactText;
+
     void Start()
     {
         timer.color = new Color(0.97f, 0.71f, 0.19f);
@@ -77,6 +80,11 @@ public class UIController : MonoBehaviour
     public void Settings()
     {
         
+    }
+
+    public void InteractTextVisibility(bool visible)
+    {
+        interactText.gameObject.SetActive(visible);
     }
 
 
