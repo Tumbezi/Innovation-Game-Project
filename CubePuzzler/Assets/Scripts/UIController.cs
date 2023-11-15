@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class UIController : MonoBehaviour
 
     // Interact text
     public TMP_Text interactText;
+
+    // Hearth icons
+    public List<Image> hearthIcons;
 
     void Start()
     {
@@ -85,6 +89,22 @@ public class UIController : MonoBehaviour
     public void InteractTextVisibility(bool visible)
     {
         interactText.gameObject.SetActive(visible);
+    }
+
+    public void SetHealthIcons(int amount)
+    {
+        //Disable every hearth icon
+        for (int i = 0; i < hearthIcons.Count; i++)
+        {
+            hearthIcons[i].gameObject.SetActive(false);
+        }
+
+        //Enable amount of hearth icons corresponding of players health
+        for (int i = 0; i <= amount -1; i++)
+        {
+            if (i < hearthIcons.Count)
+                hearthIcons[i].gameObject.SetActive(true);
+        }
     }
 
 

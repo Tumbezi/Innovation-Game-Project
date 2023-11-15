@@ -16,7 +16,10 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     float waitTime;
     public CameraController cc;
-    public UIManager uiManager;
+    public UIController uiController;
+
+    [SerializeField]
+    int playerHealth;
 
     private Transform currentSide;
 
@@ -120,6 +123,7 @@ public class PlayerControl : MonoBehaviour
                 transform.position = travelStartTarget.transform.position;
                 currentTarget = travelStartTarget;
                 moving = false;
+                ChangeHealth(-1);
             }
             else
                 moving = false;
@@ -205,5 +209,11 @@ public class PlayerControl : MonoBehaviour
     public Transform FetchSide()
     {
         return currentSide;
+    }
+
+    void ChangeHealth(int change)
+    {
+        playerHealth += change;
+        uiController.SetHealthIcons(playerHealth);
     }
 }
