@@ -2,12 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject levelMenu;
     public GameObject settingsMenu;
+    public List<Button> buttons = new List<Button>();
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        //Set Level Select -buttons to load levels with different indexes
+        gameManager = GameManager.Instance;
+        for(int i = 0; i < buttons.Count; i++)
+        {
+            int c = i;
+            buttons[c].onClick.AddListener(() => gameManager.LoadLevel(c));
+        }
+    }
 
     public void Play()
     {

@@ -10,7 +10,7 @@ public class PlayerCollisionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        uiController = FindObjectOfType<UIController>();
     }
 
     // Update is called once per frame

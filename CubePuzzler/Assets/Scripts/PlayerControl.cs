@@ -46,6 +46,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         transform.position = currentTarget.transform.position;
+        uiController = FindObjectOfType<UIController>();
     }
 
     void MovePressed(Vector3 direction)
@@ -202,7 +203,8 @@ public class PlayerControl : MonoBehaviour
         cc.transform.rotation = currentSide.rotation;
         cc.transform.Translate(0, 0, CameraRotation.zoomin);
         */
-        skyboxManager.ChangeSkybox();
+        
+        //skyboxManager.ChangeSkybox();
     }
 
     // This gets currentside from RotateView to use in other scripts
