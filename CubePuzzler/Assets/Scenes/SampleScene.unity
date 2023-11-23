@@ -3369,6 +3369,14 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 1238558087}
+    - target: {fileID: 2843442289572610089, guid: 6cf5134bfd071cd40a0280e09a12c8c5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b74bdc29ab7d034897a8680826ddc64, type: 2}
+    - target: {fileID: 2843442289572610095, guid: 6cf5134bfd071cd40a0280e09a12c8c5, type: 3}
+      propertyPath: isHazard
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6041862050277027039, guid: 6cf5134bfd071cd40a0280e09a12c8c5, type: 3}
       propertyPath: m_Name
       value: MazeTestLevel1

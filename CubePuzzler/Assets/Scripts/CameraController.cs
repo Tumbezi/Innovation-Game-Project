@@ -23,14 +23,14 @@ public class CameraController : MonoBehaviour
 
         while (timeElapsed <= 1f)
         {
-            //Lerp new value for axis and scale gate by it
+            //Lerp new value and rotate camera by it
             Quaternion newRot = Quaternion.Lerp(startRot, targetRot, timeElapsed);
             cameraRotator.transform.rotation = newRot;
             timeElapsed += Time.deltaTime * rotSpeed;
             yield return null;
         }
 
-        //Ensure that the scale is correct
+        //Ensure that the rotation is correct
         cameraRotator.transform.rotation = targetRot;
 
     }
