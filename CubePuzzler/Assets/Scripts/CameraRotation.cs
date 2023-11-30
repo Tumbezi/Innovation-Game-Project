@@ -5,35 +5,61 @@ using UnityEngine;
 public class CameraRotation : MonoBehaviour
 {
     public Camera camera_;
-    public Transform target;
+    private Transform target;
+    private bool targetSwap;
+    private bool rotateMode;
+    public Transform targetMap;
+    public Transform targetPlayer;
     public static float zoomin;
     private Vector3 prevPos;
 
     public Transform startSide;
     public Transform currentSide;
     public GameObject player;
-    private PlayerControllerTesting pc;
+    private PlayerControl pc;
 
     // Set inital camera position
     private void Start()
     {
         zoomin = -32.35f;
+        target = targetMap;
         camera_.transform.position = target.position;
         camera_.transform.Translate(new Vector3(0, 0, zoomin));
-        pc = player.GetComponent<PlayerControllerTesting>();
+        pc = player.GetComponent<PlayerControl>();
     }
 
     private void Update()
     {
+        // Swap camera between player and map
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (targetSwap)
+                target = targetMap;
+            else
+                target = targetPlayer;
+
+            targetSwap =! targetSwap;
+        }
+
         // Grab the location of the camera position
-        if (Input.GetMouseButtonDown(0))
-            prevPos = camera_.ScreenToViewportPoint(Input.mousePosition);
+        // Toggle camera rotation with C
+        if (Input.GetKeyDown(KeyCode.C))
+            rotateMode =! rotateMode;
 
-        if (Input.GetMouseButton(0))
+        if (rotateMode)
+        {
             RotateCamera();
+            prevPos = camera_.ScreenToViewportPoint(Input.mousePosition);
+            Cursor.visible = false;
+        }
 
-        if (Input.GetMouseButton(1))
-            ResetCamera();
+        else if (!rotateMode)
+        {
+            prevPos = camera_.ScreenToViewportPoint(Input.mousePosition);
+            Cursor.visible = true;
+        }
+            
+
     }
 
     // Rotate the camera
@@ -86,3 +112,25 @@ public class CameraRotation : MonoBehaviour
         }
     }
 }
+
+
+
+
+/*
+if (!targetSwap)
+{
+    if (Input.GetMouseButtonDown(0))
+        prevPos = camera_.ScreenToViewportPoint(Input.mousePosition);
+
+    if (Input.GetMouseButton(0))
+        RotateCamera();
+
+    if (Input.GetMouseButton(1))
+        ResetCamera();
+}
+
+else
+{
+    RotateCamera();
+}
+*/
