@@ -113,6 +113,7 @@ public class UIController : MonoBehaviour
 
     public void Continue()
     {
+        Debug.Log("Continued");
         Pause();
     }
 
