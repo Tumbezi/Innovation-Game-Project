@@ -17,6 +17,11 @@ public class UIController : MonoBehaviour
     public TMP_Text timer;
     public float currentTime = 0;
 
+    // End menu
+    public GameObject endMenu;
+    public TMP_Text finalTimertxt;
+    public float finalTimefloat;
+
     // These are here for now, can implement trophies
     public float bronzeTime;
     public float silverTime;
@@ -143,9 +148,22 @@ public class UIController : MonoBehaviour
         }
     }
 
-
     public void QuitLevel()
     {
         SceneManager.LoadSceneAsync("MainMenu");
+    }
+
+    // Level complete stuff
+    public void EndFunction()
+    {
+        // Pause game
+        isPaused = true;
+
+        // Give the timer value
+        finalTimefloat = currentTime;
+        finalTimertxt.SetText("Time: " + string.Format("{0:00}:{1:00}", Mathf.FloorToInt(finalTimefloat / 60), Mathf.FloorToInt(finalTimefloat % 60)));
+
+        // Show the end menu
+        endMenu.SetActive(true);
     }
 }

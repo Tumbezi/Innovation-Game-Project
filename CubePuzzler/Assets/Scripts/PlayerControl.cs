@@ -125,6 +125,15 @@ public class PlayerControl : MonoBehaviour
                 currentTarget = travelStartTarget;
                 moving = false;
                 ChangeHealth(-1);
+            } 
+            // Ending
+            else if (target.GetComponent<MarkerCheck>().isEnd)
+            {
+                uiController.EndFunction();
+                // Stop timer
+                // Save timer
+                // End level
+                // End menu
             }
             else
                 moving = false;
