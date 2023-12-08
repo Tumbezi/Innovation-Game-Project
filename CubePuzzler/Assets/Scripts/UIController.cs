@@ -110,7 +110,7 @@ public class UIController : MonoBehaviour
         pauseMenu.SetActive(isPaused);
     }
 
-    void Restart()
+    public void Restart()
     {
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
@@ -150,6 +150,8 @@ public class UIController : MonoBehaviour
 
     public void QuitLevel()
     {
+        isPaused = false;
+        Time.timeScale = 1f;
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
@@ -158,6 +160,7 @@ public class UIController : MonoBehaviour
     {
         // Pause game
         isPaused = true;
+        Time.timeScale = 0f;
 
         // Give the timer value
         finalTimefloat = currentTime;

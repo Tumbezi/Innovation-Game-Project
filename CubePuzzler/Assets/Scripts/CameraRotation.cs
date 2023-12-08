@@ -112,25 +112,3 @@ public class CameraRotation : MonoBehaviour
         }
     }
 }
-
-
-
-
-/*
-if (!targetSwap)
-{
-    if (Input.GetMouseButtonDown(0))
-        prevPos = camera_.ScreenToViewportPoint(Input.mousePosition);
-
-    if (Input.GetMouseButton(0))
-        RotateCamera();
-
-    if (Input.GetMouseButton(1))
-        ResetCamera();
-}
-
-else
-{
-    RotateCamera();
-}
-*/

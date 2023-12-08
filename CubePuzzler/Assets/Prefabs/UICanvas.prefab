@@ -1357,12 +1357,12 @@ MonoBehaviour:
   isPaused: 0
   timer: {fileID: 1537276085383657552}
   currentTime: 0
-  endMenu: {fileID: 0}
+  endMenu: {fileID: 904820028944796587}
   finalTimertxt: {fileID: 3433534844107710812}
   finalTimefloat: 0
-  bronzeTime: 9
-  silverTime: 6
-  goldTime: 3
+  bronzeTime: 60
+  silverTime: 50
+  goldTime: 40
   interactText: {fileID: 1537276083963515412}
   hearthIcons:
   - {fileID: 1537276084363483890}

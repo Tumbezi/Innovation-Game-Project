@@ -29,12 +29,12 @@ public class GameManager : MonoBehaviour
 
 
 
-    // Update is called once per frame
+    /* Update is called once per frame
     void Update()
     {
         
     }
-
+    */
     public void LoadLevel(int index)
     {
         currentLevelIndex = index;

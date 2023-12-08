@@ -130,10 +130,6 @@ public class PlayerControl : MonoBehaviour
             else if (target.GetComponent<MarkerCheck>().isEnd)
             {
                 uiController.EndFunction();
-                // Stop timer
-                // Save timer
-                // End level
-                // End menu
             }
             else
                 moving = false;
@@ -150,43 +146,11 @@ public class PlayerControl : MonoBehaviour
 
     void CheckIfRotating(MarkerCheck mc)
     {
-        /*
-        if (dir.x == 1f)
-            RotateView(Edgeside.Right);
-        else if (dir.x == -1f)
-            RotateView(Edgeside.Left);
-        else if (dir.y == 1f)
-            RotateView(Edgeside.Top);
-        else if (dir.y == -1f)
-            RotateView(Edgeside.Bottom);
-        */
-
         //Check which rotation from MarkerCheck is the same as player currently has and call RotateView with the not matching side
         if (transform.rotation.x == mc.sides[0].rotation.x && transform.rotation.y == mc.sides[0].rotation.y)
             RotateView(mc.sides[1]);
         else
             RotateView(mc.sides[0]);
-
-        /*
-        Vector3 sideToVector = new Vector3();
-        switch (side)
-        {
-            case Edgeside.Left:
-                sideToVector = Vector3.left; break;
-            case Edgeside.Right:
-                sideToVector = Vector3.right; break;
-            case Edgeside.Top:
-                sideToVector = Vector3.up; break;
-            case Edgeside.Bottom:
-                sideToVector = Vector3.down; break;
-        }
-
-        if (sideToVector == direction)
-        {
-            Debug.Log("Rotating true");
-            RotateView(side);
-        }
-        */
     }
 
     void Interact()
@@ -199,7 +163,7 @@ public class PlayerControl : MonoBehaviour
 
     void RotateView(Transform side)
     {
-        //TODO! Add player rotation and restrictions when currenlty rotating
+        //TODO! Add player rotation and restrictions when currently rotating
 
         //Rotate the player to new side
         transform.rotation = side.transform.rotation;
@@ -226,5 +190,10 @@ public class PlayerControl : MonoBehaviour
     {
         playerHealth += change;
         uiController.SetHealthIcons(playerHealth);
+
+        if (playerHealth <= 0)
+        {
+            uiController.Restart();
+        }
     }
 }
