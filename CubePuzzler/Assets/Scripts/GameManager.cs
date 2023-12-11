@@ -3,12 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[System.Serializable]
+public class ListWrapper
+{
+    public List<float> InnerList;
+    public float this[int key]
+    {
+        get
+        {
+            return InnerList[key];
+        }
+        set
+        {
+            InnerList[key] = value;
+        }
+    }
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public List<GameObject> levelPrefabs;
     public GameObject gameplayCanvas;
     public int currentLevelIndex = -1;
+
+    public List<int> levelUnlockStatus = new List<int>() { 0 };
+    public List<ListWrapper> levelTrophyTimes = new List<ListWrapper>();
 
     private void Awake()
     {
@@ -54,7 +74,18 @@ public class GameManager : MonoBehaviour
         GameObject g = Instantiate(levelPrefabs[currentLevelIndex]);
         g.transform.position = Vector3.zero;
         Instantiate(gameplayCanvas);
-        //currentLevelIndex = -1;
-        Debug.Log("Object intantiated");
+    }
+
+    public void SetLevelTrophy(float time)
+    {
+        if (time <= levelTrophyTimes[currentLevelIndex][0])
+            levelUnlockStatus[currentLevelIndex] = 3;
+        else if (time >= levelTrophyTimes[currentLevelIndex][0] && time <= levelTrophyTimes[currentLevelIndex][2])
+            levelUnlockStatus[currentLevelIndex] = 2;
+        else if (time >= levelTrophyTimes[currentLevelIndex][2])
+            levelUnlockStatus[currentLevelIndex] = 1;
+
+        if (currentLevelIndex + 1 == levelUnlockStatus.Count)
+            levelUnlockStatus.Add(0);
     }
 }

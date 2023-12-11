@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
@@ -11,6 +13,15 @@ public class MainMenu : MonoBehaviour
     public GameObject settingsMenu;
     public List<Button> buttons = new List<Button>();
     private GameManager gameManager;
+
+    private void Awake()
+    {
+        for (int i= 0; i < GameManager.Instance.levelUnlockStatus.Count; i++)
+        {
+            buttons[i].GetComponent<LevelButton>().unlockedStatus = true;
+            buttons[i].GetComponent<LevelButton>().trophy = GameManager.Instance.levelUnlockStatus[i];
+        }
+    }
 
     private void Start()
     {

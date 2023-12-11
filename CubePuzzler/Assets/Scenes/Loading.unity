@@ -379,6 +379,12 @@ MonoBehaviour:
   - {fileID: 2261709668176502630, guid: 8d977e355152193428c20bd0e52d6092, type: 3}
   gameplayCanvas: {fileID: 1537276085282691663, guid: 50c1da53784fe754db186c8972c399b4, type: 3}
   currentLevelIndex: -1
+  levelUnlockStatus: 00000000
+  levelTrophyTimes:
+  - InnerList:
+    - 10
+    - 20
+    - 30
 --- !u!4 &1578793320
 Transform:
   m_ObjectHideFlags: 0

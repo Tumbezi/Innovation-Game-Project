@@ -607,6 +607,7 @@ GameObject:
   - component: {fileID: 170800284}
   - component: {fileID: 170800283}
   - component: {fileID: 170800286}
+  - component: {fileID: 170800287}
   m_Layer: 5
   m_Name: Stage9
   m_TagString: Untagged
@@ -654,7 +655,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -674,7 +675,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 170800284}
   m_OnClick:
     m_PersistentCalls:
@@ -746,6 +747,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &170800287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170800281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &234312948
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +915,7 @@ GameObject:
   - component: {fileID: 289043836}
   - component: {fileID: 289043835}
   - component: {fileID: 289043838}
+  - component: {fileID: 289043839}
   m_Layer: 5
   m_Name: Stage1
   m_TagString: Untagged
@@ -941,7 +963,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -961,7 +983,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 289043836}
   m_OnClick:
     m_PersistentCalls:
@@ -986,7 +1008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1033,6 +1055,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &289043839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289043833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &329410480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1479,7 @@ GameObject:
   - component: {fileID: 418558880}
   - component: {fileID: 418558879}
   - component: {fileID: 418558882}
+  - component: {fileID: 418558883}
   m_Layer: 5
   m_Name: Stage3
   m_TagString: Untagged
@@ -1484,7 +1527,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -1504,7 +1547,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 418558880}
   m_OnClick:
     m_PersistentCalls:
@@ -1576,6 +1619,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &418558883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418558877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &440379394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1652,7 @@ GameObject:
   - component: {fileID: 440379397}
   - component: {fileID: 440379396}
   - component: {fileID: 440379399}
+  - component: {fileID: 440379400}
   m_Layer: 5
   m_Name: Stage5
   m_TagString: Untagged
@@ -1636,7 +1700,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -1656,7 +1720,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 440379397}
   m_OnClick:
     m_PersistentCalls:
@@ -1728,6 +1792,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &440379400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440379394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &447192954
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4673,7 @@ GameObject:
   - component: {fileID: 1351622435}
   - component: {fileID: 1351622434}
   - component: {fileID: 1351622437}
+  - component: {fileID: 1351622438}
   m_Layer: 5
   m_Name: Stage4
   m_TagString: Untagged
@@ -4636,7 +4721,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -4656,7 +4741,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1351622435}
   m_OnClick:
     m_PersistentCalls:
@@ -4728,6 +4813,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1351622438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351622432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &1370537782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4741,6 +4846,7 @@ GameObject:
   - component: {fileID: 1370537785}
   - component: {fileID: 1370537784}
   - component: {fileID: 1370537787}
+  - component: {fileID: 1370537788}
   m_Layer: 5
   m_Name: Stage10
   m_TagString: Untagged
@@ -4788,7 +4894,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -4808,7 +4914,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1370537785}
   m_OnClick:
     m_PersistentCalls:
@@ -4880,6 +4986,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1370537788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370537782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &1374097813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4893,6 +5019,7 @@ GameObject:
   - component: {fileID: 1374097816}
   - component: {fileID: 1374097815}
   - component: {fileID: 1374097818}
+  - component: {fileID: 1374097819}
   m_Layer: 5
   m_Name: Stage7
   m_TagString: Untagged
@@ -4940,7 +5067,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -4960,7 +5087,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1374097816}
   m_OnClick:
     m_PersistentCalls:
@@ -5032,6 +5159,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1374097819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374097813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &1446346597
 GameObject:
   m_ObjectHideFlags: 0
@@ -5665,6 +5812,7 @@ GameObject:
   - component: {fileID: 1868127187}
   - component: {fileID: 1868127186}
   - component: {fileID: 1868127189}
+  - component: {fileID: 1868127190}
   m_Layer: 5
   m_Name: Stage6
   m_TagString: Untagged
@@ -5712,7 +5860,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -5732,7 +5880,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1868127187}
   m_OnClick:
     m_PersistentCalls:
@@ -5804,6 +5952,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1868127190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868127184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &1917559763
 GameObject:
   m_ObjectHideFlags: 0
@@ -5952,6 +6120,7 @@ GameObject:
   - component: {fileID: 1960765585}
   - component: {fileID: 1960765584}
   - component: {fileID: 1960765587}
+  - component: {fileID: 1960765588}
   m_Layer: 5
   m_Name: Stage2
   m_TagString: Untagged
@@ -5999,7 +6168,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -6019,7 +6188,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1960765585}
   m_OnClick:
     m_PersistentCalls:
@@ -6091,6 +6260,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1960765588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960765582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &2026468682
 GameObject:
   m_ObjectHideFlags: 0
@@ -6104,6 +6293,7 @@ GameObject:
   - component: {fileID: 2026468685}
   - component: {fileID: 2026468684}
   - component: {fileID: 2026468687}
+  - component: {fileID: 2026468688}
   m_Layer: 5
   m_Name: Stage8
   m_TagString: Untagged
@@ -6151,7 +6341,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5379046, g: 1, b: 0.514151, a: 1}
@@ -6171,7 +6361,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2026468685}
   m_OnClick:
     m_PersistentCalls:
@@ -6243,6 +6433,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2026468688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026468682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3acaa5486fee4aa379a3f011979ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedStatus: 0
+  trophy: 0
+  lockedSprite: {fileID: 21300000, guid: 08c7a1114ba57c5478d14a0183a4ec98, type: 3}
+  trophySprites:
+  - {fileID: 21300000, guid: c4780388f1a1af549a8f5e460cf502eb, type: 3}
+  - {fileID: 21300000, guid: 0031b91c1c4b21f4682f4fa78b3116a6, type: 3}
+  - {fileID: 21300000, guid: fffd19f18b82e584b9828bca61dd9988, type: 3}
+  - {fileID: 21300000, guid: 9a39cb5940032d845b719a94a8d43bf5, type: 3}
 --- !u!1 &2045256103
 GameObject:
   m_ObjectHideFlags: 0

@@ -175,5 +175,7 @@ public class UIController : MonoBehaviour
 
         // Show the end menu
         endMenu.SetActive(true);
+
+        GameManager.Instance.SetLevelTrophy(finalTimefloat);
     }
 }
