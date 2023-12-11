@@ -42,6 +42,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
+    public void LoadNextLevel()
+    {
+        currentLevelIndex++;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Gameplay");
+    }
+
     private void InstantiateLevel()
     {
         GameObject g = Instantiate(levelPrefabs[currentLevelIndex]);

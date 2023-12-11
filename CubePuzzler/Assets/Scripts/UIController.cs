@@ -35,6 +35,11 @@ public class UIController : MonoBehaviour
     // Hearth icons
     public List<Image> hearthIcons;
 
+    //Next level
+    public GameObject nextLevelButton;
+
+    GameManager gameManager;
+
     private void Awake()
     {
         playerActions = new PlayerActions();
@@ -54,7 +59,9 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.Instance;
         timer.color = new Color(0.97f, 0.71f, 0.19f);
+        nextLevelButton.GetComponent<Button>().onClick.AddListener(() => gameManager.LoadNextLevel());
     }
 
     void Update()
