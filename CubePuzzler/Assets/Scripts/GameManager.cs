@@ -91,6 +91,11 @@ public class GameManager : MonoBehaviour
         SaveData();
     }
 
+    public ListWrapper GetLevelTimes()
+    {
+        return levelTrophyTimes[currentLevelIndex];
+    }
+
     public void SaveData()
     {
         PlayerPrefs.SetInt("LevelListCount", levelUnlockStatus.Count);

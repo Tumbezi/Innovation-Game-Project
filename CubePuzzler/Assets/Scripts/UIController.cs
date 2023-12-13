@@ -62,6 +62,7 @@ public class UIController : MonoBehaviour
         gameManager = GameManager.Instance;
         timer.color = new Color(0.97f, 0.71f, 0.19f);
         nextLevelButton.GetComponent<Button>().onClick.AddListener(() => gameManager.LoadNextLevel());
+        LoadTimes();
     }
 
     void Update()
@@ -132,6 +133,14 @@ public class UIController : MonoBehaviour
     public void Settings()
     {
         
+    }
+
+    void LoadTimes()
+    {
+        ListWrapper lw = gameManager.GetLevelTimes();
+        goldTime = lw[0];
+        silverTime = lw[1];
+        bronzeTime= lw[2];
     }
 
     public void InteractTextVisibility(bool visible)
