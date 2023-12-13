@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadData();
     }
 
     public void StartLevelInstantiating()
@@ -87,5 +88,30 @@ public class GameManager : MonoBehaviour
 
         if (currentLevelIndex + 1 == levelUnlockStatus.Count)
             levelUnlockStatus.Add(0);
+        SaveData();
+    }
+
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt("LevelListCount", levelUnlockStatus.Count);
+        for (int i = 0; i < levelUnlockStatus.Count; i++)
+        {
+            PlayerPrefs.SetInt("Level" + i, levelUnlockStatus[i]);
+        }
+        Debug.Log(levelUnlockStatus.Count);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadData()
+    {
+
+        if (PlayerPrefs.HasKey("LevelListCount"))
+        {
+            levelUnlockStatus.Clear();
+            for (int i = 0; i < PlayerPrefs.GetInt("LevelListCount"); i++)
+            {
+                levelUnlockStatus.Add(PlayerPrefs.GetInt("Level" + i));
+            }
+        }
     }
 }
