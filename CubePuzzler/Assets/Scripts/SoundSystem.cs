@@ -10,6 +10,11 @@ public class SoundSystem : MonoBehaviour
     public AudioClip back;
 
     // Simple enough. Most happens in Event Trigger and menu actions themselves.
+    void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
+
     public void Hover()
     {
         audioSource.PlayOneShot(hover);
