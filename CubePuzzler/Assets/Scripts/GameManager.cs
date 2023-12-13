@@ -59,15 +59,19 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(int index)
     {
         currentLevelIndex = index;
-        Debug.Log("Index at load: " + index.ToString());
         SceneManager.LoadScene("Gameplay");
     }
 
     public void LoadNextLevel()
     {
-        currentLevelIndex++;
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Gameplay");
+        if (currentLevelIndex + 1 >= levelPrefabs.Count)
+            SceneManager.LoadScene("MainMenu");
+        else
+        {
+            currentLevelIndex++;
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Gameplay");
+        }
     }
 
     private void InstantiateLevel()
@@ -86,7 +90,7 @@ public class GameManager : MonoBehaviour
         else if (time >= levelTrophyTimes[currentLevelIndex][2])
             levelUnlockStatus[currentLevelIndex] = 1;
 
-        if (currentLevelIndex + 1 == levelUnlockStatus.Count)
+        if (currentLevelIndex + 1 == levelUnlockStatus.Count && currentLevelIndex + 1 < levelPrefabs.Count)
             levelUnlockStatus.Add(0);
         SaveData();
     }

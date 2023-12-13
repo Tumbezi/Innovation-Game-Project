@@ -382,8 +382,12 @@ MonoBehaviour:
   levelUnlockStatus: 00000000
   levelTrophyTimes:
   - InnerList:
-    - 2
-    - 20
+    - 45
+    - 60
+    - 30
+  - InnerList:
+    - 65
+    - 75
     - 30
 --- !u!4 &1578793320
 Transform:
