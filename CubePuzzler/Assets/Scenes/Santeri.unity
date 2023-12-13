@@ -6004,6 +6004,10 @@ PrefabInstance:
       propertyPath: gates.Array.data[1]
       value: 
       objectReference: {fileID: 2090635924}
+    - target: {fileID: 7768668408771110407, guid: 8d977e355152193428c20bd0e52d6092, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4711208715938537054, guid: 22e9c0e89de5441469ebcf7fc0cc62a2, type: 3}
     - target: {fileID: 7768668408771110410, guid: 8d977e355152193428c20bd0e52d6092, type: 3}
       propertyPath: uiController
       value: 
