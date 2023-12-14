@@ -60,6 +60,11 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
+    public void DeleteData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void Quit()
     {
         Application.Quit();
