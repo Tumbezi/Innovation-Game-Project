@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
+
         for (int i= 0; i < GameManager.Instance.levelUnlockStatus.Count; i++)
         {
             buttons[i].GetComponent<LevelButton>().unlockedStatus = true;
